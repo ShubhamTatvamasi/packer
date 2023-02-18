@@ -1,8 +1,9 @@
 # packer
 
-
+Clone Magma repo:
 ```bash
-cd orc8r/tools
+git clone https://github.com/magma/magma.git
+cd orc8r/tools/packer
 ```
 
 Build Magma AGW Vagrant Box:
