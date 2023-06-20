@@ -18,7 +18,7 @@ source "proxmox-iso" "ubuntu-desktop" {
     "<enter><wait30>", // Reboot
     "<enter><wait5>${var.desktop_password}<enter><wait30>",
     "<leftSuper>terminal<enter><wait10>",
-    "sudo apt install -y qemu-guest-agent && sudo reboot",
+    "sudo apt update && sudo apt install -y qemu-guest-agent && sudo reboot",
     "<enter><wait5>${var.desktop_password}<enter><wait1m>",
   ]
 
