@@ -13,13 +13,15 @@ source "proxmox-iso" "ubuntu-desktop" {
     "${var.desktop_username}<tab><tab><tab>",
     "${var.desktop_password}<tab>",
     "${var.desktop_password}<tab><tab><tab><enter>",
-    "<wait5m>", // Wait time for Installation to finish.
+    "<wait4m30s>", // Wait time for Installation to finish.
     "<tab><enter><wait10>",
-    "<enter><wait30>", // Reboot
-    "<enter><wait5>${var.desktop_password}<enter><wait30>",
+    "<enter><wait20>", // Reboot
+    "<enter><wait5>${var.desktop_password}<enter><wait10>",
     "<leftSuper>terminal<enter><wait10>",
-    "sudo apt update && sudo apt install -y qemu-guest-agent && sudo reboot",
-    "<enter><wait5>${var.desktop_password}<enter><wait1m>",
+    "sudo apt install -y qemu-guest-agent",
+    "<enter><wait5>${var.desktop_password}<enter><wait20>",
+    "sudo systemctl start qemu-guest-agent",
+    "<enter><wait5>",
   ]
 
   insecure_skip_tls_verify = true
@@ -48,4 +50,8 @@ source "proxmox-iso" "ubuntu-desktop" {
   password    = "${var.password}"
 
   communicator = "none"
+
+  template_name        = "ubuntu-desktop-22-04-2"
+  template_description = "Ubuntu 22.04.2 LTS, generated on ${timestamp()}"
+
 }
