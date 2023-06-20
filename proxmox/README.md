@@ -3,6 +3,8 @@
 Create a password file:
 ```bash
 touch variables.auto.pkrvars.hcl
+
+echo 'password = "supersecret"' > variables.auto.pkrvars.hcl
 ```
 
 Install plugins:

@@ -1,4 +1,6 @@
-variable "password" {}
+variable "password" {
+  type = string
+}
 
 variable "username" {
   type    = string
@@ -15,19 +17,24 @@ variable "node" {
   default = "pve"
 }
 
-variable "ssh_username" {
+variable "iso_file" {
+  type    = string
+  default = "ubuntu-22.04.2-desktop-amd64.iso"
+}
+
+variable "desktop_username" {
   type    = string
   default = "ubuntu"
 }
 
-variable "ssh_password" {
+variable "desktop_password" {
   type    = string
   default = "ubuntu"
 }
 
 variable "memory" {
   type    = number
-  default = 2048
+  default = 4096
 }
 
 variable "cores" {
@@ -47,5 +54,5 @@ variable "os" {
 
 variable "disk_size" {
   type    = string
-  default = "25G"
+  default = "50G"
 }
