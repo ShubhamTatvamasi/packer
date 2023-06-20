@@ -10,9 +10,16 @@ source "proxmox-iso" "ubuntu-desktop" {
     "<tab><tab><tab><tab><enter><wait10>",
     "<tab><enter><wait20>",
     "<tab><tab><tab><enter><wait10>",
-    "<insert>${var.desktop_username}<tab><tab><tab>",
-    "<insert>${var.desktop_password}<tab>",
-    "<insert>${var.desktop_password}<tab><tab><tab><enter>",
+    "${var.desktop_username}<tab><tab><tab>",
+    "${var.desktop_password}<tab>",
+    "${var.desktop_password}<tab><tab><tab><enter>",
+    "<wait5m>", // Wait time for Installation to finish.
+    "<tab><enter><wait10>",
+    "<enter><wait30>", // Reboot
+    "<enter><wait5>${var.desktop_password}<enter><wait30>",
+    "<leftSuper>terminal<enter><wait10>",
+    "sudo apt install -y qemu-guest-agent && sudo reboot",
+    "<enter><wait5>${var.desktop_password}<enter><wait1m>",
   ]
 
   insecure_skip_tls_verify = true
