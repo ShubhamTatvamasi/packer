@@ -21,7 +21,7 @@ source "proxmox-iso" "ubuntu-desktop" {
     "sudo apt install -y qemu-guest-agent",
     "<enter><wait5>${var.desktop_password}<enter><wait20>",
     "sudo systemctl start qemu-guest-agent",
-    "<enter><wait5>",
+    "<enter>",
   ]
 
   insecure_skip_tls_verify = true
