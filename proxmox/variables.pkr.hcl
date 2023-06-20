@@ -22,6 +22,16 @@ variable "iso_file" {
   default = "ubuntu-22.04.2-desktop-amd64.iso"
 }
 
+variable "template_name" {
+  type    = string
+  default = "ubuntu-desktop-22-04-2"
+}
+
+variable "template_description" {
+  type    = string
+  default = "Ubuntu Desktop 22.04.2 LTS"
+}
+
 variable "desktop_username" {
   type    = string
   default = "ubuntu"

@@ -49,9 +49,9 @@ source "proxmox-iso" "ubuntu-desktop" {
   username    = "${var.username}"
   password    = "${var.password}"
 
-  communicator = "none"
+  template_name        = "${var.template_name}"
+  template_description = "${var.template_description}, generated on ${timestamp()}"
 
-  template_name        = "ubuntu-desktop-22-04-2"
-  template_description = "Ubuntu 22.04.2 LTS, generated on ${timestamp()}"
+  communicator = "none"
 
 }
