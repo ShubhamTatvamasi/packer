@@ -16,7 +16,7 @@ source "proxmox-iso" "ubuntu-desktop" {
     "<wait4m30s>", // Wait time for Installation to finish.
     "<tab><enter><wait10>",
     "<enter><wait20>", // Reboot
-    "<enter><wait5>${var.desktop_password}<enter><wait10>",
+    "<enter><wait5>${var.desktop_password}<enter><wait20>",
     "<leftSuper>terminal<enter><wait10>",
     "sudo apt install -y qemu-guest-agent",
     "<enter><wait5>${var.desktop_password}<enter><wait20>",
