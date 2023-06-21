@@ -15,13 +15,6 @@ source "proxmox-iso" "ubuntu-server" {
   iso_file    = "local:iso/${var.iso_file}"
   unmount_iso = true
 
-  # additional_iso_files {
-  #   cd_files = [
-  #     "./http/meta-data",
-  #     "./http/user-data"
-  #   ]
-  # }
-
   network_adapters {
     bridge = "vmbr0"
     model  = "virtio"
@@ -31,9 +24,6 @@ source "proxmox-iso" "ubuntu-server" {
     disk_size    = "${var.disk_size}"
     storage_pool = "local-lvm"
   }
-
-  # cloud_init = true
-  # cloud_init_storage_pool = "local-lvm"
 
   memory   = "${var.memory}"
   cores    = "${var.cores}"
