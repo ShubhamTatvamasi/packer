@@ -2,14 +2,13 @@ variable "password" {
   type = string
 }
 
+variable "proxmox_url" {
+  type    = string
+}
+
 variable "username" {
   type    = string
   default = "root@pam"
-}
-
-variable "proxmox_url" {
-  type    = string
-  default = "https://192.168.1.171:8006/api2/json"
 }
 
 variable "node" {
