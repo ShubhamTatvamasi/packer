@@ -3,7 +3,7 @@ variable "password" {
 }
 
 variable "proxmox_url" {
-  type    = string
+  type = string
 }
 
 variable "username" {
