@@ -2,9 +2,10 @@
 
 Create a password file:
 ```bash
-touch variables.auto.pkrvars.hcl
-
-echo 'password = "supersecret"' > variables.auto.pkrvars.hcl
+cat << EOF > variables.auto.pkrvars.hcl
+proxmox_url = "https://192.168.1.201:8006/api2/json"
+password = "supersecret"
+EOF
 ```
 
 Install plugins:
@@ -21,4 +22,3 @@ Foramt files:
 ```bash
 packer fmt .
 ```
-
