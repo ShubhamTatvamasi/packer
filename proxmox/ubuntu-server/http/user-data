@@ -17,3 +17,9 @@ autoinstall:
     install-server: true
     authorized-keys:
       - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOxN5VcvopmXS7fAA7ESjGYHNuAIWE7d0Fyj9Lh8lVZu shubhamtatvamasi@gmail.com
+  late-commands:
+    - echo 'ubuntu ALL=(ALL) NOPASSWD:ALL' > /target/etc/sudoers.d/ubuntu
+    - curtin in-target --target=/target -- chmod 440 /etc/sudoers.d/ubuntu
+    - curtin in-target --target=/target -- apt update
+    - curtin in-target --target=/target -- apt upgrade --yes
+    - curtin in-target --target=/target -- truncate -s 0 /etc/machine-id
