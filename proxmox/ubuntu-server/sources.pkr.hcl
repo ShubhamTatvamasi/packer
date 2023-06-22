@@ -15,6 +15,8 @@ source "proxmox-iso" "ubuntu-server" {
   iso_file    = "local:iso/${var.iso_file}"
   unmount_iso = true
 
+  http_bind_address = "${var.http_bind_address}"
+
   network_adapters {
     bridge = "vmbr0"
     model  = "virtio"
@@ -37,6 +39,7 @@ source "proxmox-iso" "ubuntu-server" {
 
   ssh_username = "${var.ssh_username}"
   ssh_password = "${var.ssh_password}"
+  ssh_timeout  = "20m"
 
   template_name        = "${var.template_name}"
   template_description = "${var.template_description}, generated on ${timestamp()}"

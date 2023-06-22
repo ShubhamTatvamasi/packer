@@ -6,6 +6,10 @@ variable "proxmox_url" {
   type = string
 }
 
+variable "http_bind_address" {
+  type = string
+}
+
 variable "username" {
   type    = string
   default = "root@pam"
