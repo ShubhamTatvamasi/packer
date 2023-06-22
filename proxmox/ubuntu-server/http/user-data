@@ -20,6 +20,3 @@ autoinstall:
   late-commands:
     - echo 'ubuntu ALL=(ALL) NOPASSWD:ALL' > /target/etc/sudoers.d/ubuntu
     - curtin in-target --target=/target -- chmod 440 /etc/sudoers.d/ubuntu
-    - curtin in-target --target=/target -- apt update
-    - curtin in-target --target=/target -- apt upgrade --yes
-    - curtin in-target --target=/target -- truncate -s 0 /etc/machine-id
