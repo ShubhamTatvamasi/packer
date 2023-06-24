@@ -8,14 +8,13 @@ source "proxmox-iso" "ubuntu-server" {
     "boot<enter>"
   ]
 
-  http_directory = "http"
+  http_directory    = "http"
+  http_bind_address = "${var.http_bind_address}"
 
   insecure_skip_tls_verify = true
 
   iso_file    = "local:iso/${var.iso_file}"
   unmount_iso = true
-
-  http_bind_address = "${var.http_bind_address}"
 
   network_adapters {
     bridge = "vmbr0"
