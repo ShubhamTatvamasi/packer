@@ -27,7 +27,7 @@ variable "iso_file" {
 
 variable "template_name" {
   type    = string
-  default = "ubuntu-server-22-04-2"
+  default = "ubuntu-server-22-04-3"
 }
 
 variable "template_description" {
