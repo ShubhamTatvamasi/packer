@@ -18,7 +18,7 @@ variable "node" {
 
 variable "iso_file" {
   type    = string
-  default = "ubuntu-22.04.2-desktop-amd64.iso"
+  default = "ubuntu-22.04.3-desktop-amd64.iso"
 }
 
 variable "template_name" {
@@ -28,7 +28,7 @@ variable "template_name" {
 
 variable "template_description" {
   type    = string
-  default = "Ubuntu Desktop 22.04.2 LTS"
+  default = "Ubuntu Desktop 22.04.3 LTS"
 }
 
 variable "desktop_username" {

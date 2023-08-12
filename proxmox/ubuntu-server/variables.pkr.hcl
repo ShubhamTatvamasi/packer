@@ -22,7 +22,7 @@ variable "node" {
 
 variable "iso_file" {
   type    = string
-  default = "ubuntu-22.04.2-live-server-amd64.iso"
+  default = "ubuntu-22.04.3-live-server-amd64.iso"
 }
 
 variable "template_name" {
@@ -32,7 +32,7 @@ variable "template_name" {
 
 variable "template_description" {
   type    = string
-  default = "Ubuntu Server 22.04.2 LTS"
+  default = "Ubuntu Server 22.04.3 LTS"
 }
 
 variable "ssh_username" {
